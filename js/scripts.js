@@ -327,6 +327,11 @@ function initContainer(){
 	configurationElm();
 }
 $(document).ready(function() {
+    //wengsr begin
+    if(typeof(layOutData)!='undefined'){
+        showLayOutClassList(layOutData,$('#divNaviLeft'));
+    }
+    //wengsr end
 	CKEDITOR.disableAutoInline = true;
 	restoreData();
 	var contenthandle = CKEDITOR.replace( 'contenteditor' ,{
@@ -500,3 +505,26 @@ function saveHtml()
 		}
 		}
 
+//wengsr
+var showLayOutList = function(layOutList,container){
+    $.each(layOutList,function(i,layout){
+        var previewDiv = $('<div class="preview">').append(layout.preview);
+        var viewDiv = $('<div class="view">').append(layout.view);
+        var layOutDiv = $('<div class="lyrow ui-draggable">').append(layout.buttons).append('<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <span class="drag label"><i class="icon-move"></i>拖动</span>').append(previewDiv).append(viewDiv);
+        container.append(layOutDiv);
+    });
+};
+var showLayOutClassList = function(layOutClassList,container){
+    $.each(layOutClassList,function(i,layOutClass){
+        var ulNavTmp = $('<ul class="nav nav-list accordion-group">');
+        var liHeaderTmp = $('<li class="nav-header">');
+        var divHelpTmp = '<div class="pull-right popover-info"><i class="icon-question-sign "></i>' +
+            '<div class="popover fade right"><div class="arrow"></div><h3 class="popover-title">帮助</h3>' +
+            '<div class="popover-content">' + layOutClass.helpInfo +
+            '</div></div></div>';
+        liHeaderTmp.append(divHelpTmp).append('<i class="icon-plus icon-white"></i>').append(layOutClass.titleInfo);
+        var liContainerTmp = $('<li style="display:'+(i==0?'list-item':'none')+';" class="rows" id="'+layOutClass.containerId+'">');
+        showLayOutList(layOutClass.layOuts,liContainerTmp);;
+        ulNavTmp.append(liHeaderTmp).append(liContainerTmp).appendTo(container);
+    });
+}
