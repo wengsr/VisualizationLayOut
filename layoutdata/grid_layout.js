@@ -14,8 +14,8 @@ layOutData.push(
         layOuts:[
             {
                 buttons:'',
-                preview:'<input value="8 4" type="text">',
-                view:'<div class="row-fluid clearfix"><div class="span8 column"></div><div class="span4 column"></div></div>'
+                preview:'<input value="12" type="text">',
+                view:'<div class="row clearfix"><div class="col-md-12 column"></div></div>'
             }
         ]
     }

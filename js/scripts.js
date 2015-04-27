@@ -181,7 +181,7 @@ function gridSystemGenerator() {
 		var n = $(this).val().split(" ", 12);
 		$.each(n, function(n, r) {
 			e = e + parseInt(r);
-			t += '<div class="span' + r + ' column"></div>'
+			t += '<div class="col-md-' + r + ' column"></div>'
 		});
 		if (e == 12) {
 			$(this).parent().next().children().html(t);
@@ -398,6 +398,7 @@ $(document).ready(function() {
 		currenteditor.html(contenthandle.getData());
 	});
 	$("[data-target=#downloadModal]").click(function(e) {
+
 		e.preventDefault();
 		downloadLayoutSrc();
 	});
@@ -510,7 +511,7 @@ var showLayOutList = function(layOutList,container){
     $.each(layOutList,function(i,layout){
         var previewDiv = $('<div class="preview">').append(layout.preview);
         var viewDiv = $('<div class="view">').append(layout.view);
-        var layOutDiv = $('<div class="lyrow ui-draggable">').append(layout.buttons).append('<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <span class="drag label"><i class="icon-move"></i>拖动</span>').append(previewDiv).append(viewDiv);
+        var layOutDiv = $('<div class="lyrow ui-draggable">').append(layout.buttons).append('<a href="#close" class="remove label label-danger"><i class="glyphicon-remove glyphicon"></i>删除</a> <span class="drag label label-default"><i class="glyphicon glyphicon-move"></i>拖动</span>').append(previewDiv).append(viewDiv);
         container.append(layOutDiv);
     });
 };
@@ -518,11 +519,11 @@ var showLayOutClassList = function(layOutClassList,container){
     $.each(layOutClassList,function(i,layOutClass){
         var ulNavTmp = $('<ul class="nav nav-list accordion-group">');
         var liHeaderTmp = $('<li class="nav-header">');
-        var divHelpTmp = '<div class="pull-right popover-info"><i class="icon-question-sign "></i>' +
+        var divHelpTmp = '<div class="pull-right popover-info"><i class="glyphicon glyphicon-question-sign"></i>' +
             '<div class="popover fade right"><div class="arrow"></div><h3 class="popover-title">帮助</h3>' +
             '<div class="popover-content">' + layOutClass.helpInfo +
             '</div></div></div>';
-        liHeaderTmp.append(divHelpTmp).append('<i class="icon-plus icon-white"></i>').append(layOutClass.titleInfo);
+        liHeaderTmp.append(divHelpTmp).append('<i class="glyphicon-plus glyphicon"></i>').append(layOutClass.titleInfo);
         var liContainerTmp = $('<li style="display:'+(i==0?'list-item':'none')+';" class="rows" id="'+layOutClass.containerId+'">');
         showLayOutList(layOutClass.layOuts,liContainerTmp);;
         ulNavTmp.append(liHeaderTmp).append(liContainerTmp).appendTo(container);
