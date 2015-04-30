@@ -16,7 +16,28 @@ layOutData.push(
                 buttons:'',
                 preview:'<input value="12" type="text">',
                 view:'<div class="row clearfix"><div class="col-md-12 column"></div></div>'
+            },
+            {
+                buttons:'',
+                preview:'<input value="6 6" type="text">',
+                view:'<div class="row clearfix"><div class="col-md-6 column"></div><div class="col-md-6 column"></div></div>'
+            },
+            {
+                buttons:'',
+                preview:'<input value="8 4" type="text">',
+                view:'<div class="row clearfix"><div class="col-md-8 column"></div><div class="col-md-4 column"></div></div>'
+            },
+            {
+                buttons:'',
+                preview:'<input type="text" value="4 4 4">',
+                view:'<div class="row clearfix"><div class="col-md-4 column"></div><div class="col-md-4 column"></div><div class="col-md-4 column"></div></div>'
+            },
+            {
+                buttons:'',
+                preview:'<input type="text" value="2 6 4">',
+                view:'<div class="row clearfix"><div class="col-md-2 column"></div><div class="col-md-6 column"></div><div class="col-md-4 column"></div></div>'
             }
+
         ]
     }
 );

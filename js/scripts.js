@@ -194,14 +194,16 @@ function gridSystemGenerator() {
 function configurationElm(e, t) {
 	$(".demo").delegate(".configuration > a", "click", function(e) {
 		e.preventDefault();
-		var t = $(this).parent().next().next().children();
+		//var t = $(this).parent().next().next().children();
+        var t = $(this).parent().next().next().next().next().children();
 		$(this).toggleClass("active");
-		t.toggleClass($(this).attr("rel"))
+        t.toggleClass($(this).attr("rel"));
 	});
 	$(".demo").delegate(".configuration .dropdown-menu a", "click", function(e) {
 		e.preventDefault();
 		var t = $(this).parent().parent();
-		var n = t.parent().parent().next().next().children();
+		//var n = t.parent().parent().next().next().children();
+        var n = t.parent().parent().next().next().next().next().children();
 		t.find("li").removeClass("active");
 		$(this).parent().addClass("active");
 		var r = "";
