@@ -337,9 +337,9 @@ $(document).ready(function() {
 	CKEDITOR.disableAutoInline = true;
 	restoreData();
 	var contenthandle = CKEDITOR.replace( 'contenteditor' ,{
-		language: 'en',
-		contentsCss: ['css/bootstrap-combined.min.css'],
-		allowedContent: true
+        language: 'zh-cn',
+        contentsCss: ['css/bootstrap-combined.min.css'],
+        allowedContent: true
 	});
 	$("body").css("min-height", $(window).height() - 50);
 	$(".demo").css("min-height", $(window).height() - 130);
@@ -390,15 +390,20 @@ $(document).ready(function() {
 	});
 	initContainer();
 	$('body.edit .demo').on("click","[data-target=#editorModal]",function(e) {
-		e.preventDefault();
+        e.preventDefault();
 		currenteditor = $(this).parent().parent().find('.view');
 		var eText = currenteditor.html();
+        console.info($(this));
 		contenthandle.setData(eText);
 	});
 	$("#savecontent").click(function(e) {
 		e.preventDefault();
 		currenteditor.html(contenthandle.getData());
 	});
+    $("#saveHtml").click(function(e) {
+        e.preventDefault();
+        saveHtml();
+    });
 	$("[data-target=#downloadModal]").click(function(e) {
 
 		e.preventDefault();
@@ -527,7 +532,7 @@ var showLayOutClassList = function(layOutClassList,container){
             '</div></div></div>';
         liHeaderTmp.append(divHelpTmp).append('<i class="glyphicon-plus glyphicon"></i>').append(layOutClass.titleInfo);
         var liContainerTmp = $('<li style="display:'+(i==0?'list-item':'none')+';" class="rows" id="'+layOutClass.containerId+'">');
-        showLayOutList(layOutClass.layOuts,liContainerTmp);;
+        showLayOutList(layOutClass.layOuts,liContainerTmp);
         ulNavTmp.append(liHeaderTmp).append(liContainerTmp).appendTo(container);
     });
 }
