@@ -46,7 +46,6 @@ function saveLayout(){
 }
 
  function downloadLayout(){
-	
 	$.ajax({  
 		type: "POST",  
 		url: "/build/downloadLayout",  
@@ -125,13 +124,14 @@ function handleAccordionIds() {
 	var n = "accordion-" + t;
 	var r;
 	e.attr("id", n);
-	e.find(".accordion-group").each(function(e, t) {
-		r = "accordion-element-" + randomNumber();
-		$(t).find(".accordion-toggle").each(function(e, t) {
+    console.info(e.find(".panel-default").length);//.panel-group
+	e.find(".panel-default").each(function(e, t) {//.accordion-group
+		r = "panel-element-" + randomNumber();//accordion-element-
+		$(t).find(".panel-title").each(function(e, t) {//.accordion-toggle
 			$(t).attr("data-parent", "#" + n);
 			$(t).attr("href", "#" + r)
 		});
-		$(t).find(".accordion-body").each(function(e, t) {
+		$(t).find(".panel-collapse").each(function(e, t) {//.accordion-body
 			$(t).attr("id", r)
 		})
 	})
@@ -153,7 +153,8 @@ function handleModalIds() {
 	var n = "modal-container-" + t;
 	var r = "modal-" + t;
 	e.attr("id", r);
-	e.attr("href", "#" + n);
+	//e.attr("href", "#" + n);
+    e.attr("data-target", "#" + n);
 	e.next().attr("id", n)
 }
 function handleTabsIds() {
@@ -409,7 +410,6 @@ $(document).ready(function() {
         e.preventDefault();
 		currenteditor = $(this).parent().parent().find('.view');
 		var eText = currenteditor.html();
-        console.info($(this));
 		contenthandle.setData(eText);
 	});
 	$("#savecontent").click(function(e) {
@@ -526,11 +526,17 @@ function saveHtml()
 		}
 
 //wengsr
-var showLayOutList = function(layOutList,container){
+var showLayOutList = function(layoutName, layOutList,container){
+    var layoutDivClass;
+    if('gridSystem'===layoutName){
+        layoutDivClass = "lyrow ui-draggable";
+    }else{
+        layoutDivClass = "box box-element ui-draggable";
+    }
     $.each(layOutList,function(i,layout){
         var previewDiv = $('<div class="preview">').append(layout.preview);
         var viewDiv = $('<div class="view">').append(layout.view);
-        var layOutDiv = $('<div class="lyrow ui-draggable">').append(layout.buttons).append('<a href="#close" class="remove label label-danger"><i class="glyphicon-remove glyphicon"></i>删除</a> <span class="drag label label-default"><i class="glyphicon glyphicon-move"></i>拖动</span>').append(previewDiv).append(viewDiv);
+        var layOutDiv = $('<div class="' + layoutDivClass + '">').append(layout.buttons).append('<a href="#close" class="remove label label-danger"><i class="glyphicon-remove glyphicon"></i>删除</a> <span class="drag label label-default"><i class="glyphicon glyphicon-move"></i>拖动</span>').append(previewDiv).append(viewDiv);
         container.append(layOutDiv);
     });
 };
@@ -544,7 +550,7 @@ var showLayOutClassList = function(layOutClassList,container){
             '</div></div></div>';
         liHeaderTmp.append(divHelpTmp).append('<i class="glyphicon-plus glyphicon"></i>').append(layOutClass.titleInfo);
         var liContainerTmp = $('<li style="display:'+(i==0?'list-item':'none')+';" class="rows" id="'+layOutClass.containerId+'">');
-        showLayOutList(layOutClass.layOuts,liContainerTmp);
+        showLayOutList(layOutClass.name, layOutClass.layOuts, liContainerTmp);
         ulNavTmp.append(liHeaderTmp).append(liContainerTmp).appendTo(container);
     });
 }

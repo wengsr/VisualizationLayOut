@@ -25,17 +25,22 @@ layOutData.push(
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview:'遮罩窗口',
-                view:''
+                view:'<button id="myModalLink" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal11">弹出遮罩窗口</button> <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel11">窗口标题</h4></div><div class="modal-body">窗口内容...</div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">关闭</button><button type="button" class="btn btn-primary">保存</button></div></div></div></div>'
             },
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview:'选项卡',
-                view:'<div class="tabbable" id="tabs-929360"><ul id="tt-999" class="nav nav-tabs"><li class=""><a href="#panel-596431" data-toggle="tab" contenteditable="true">选项卡 #1</a></li><li class="active"><a href="#panel-380299" data-toggle="tab" contenteditable="true">选项卡 #2</a></li></ul><div class="tab-content"><div class="tab-pane" id="panel-596431">					<p contenteditable="true">选项卡1中的内容</p>				</div>				<div class="tab-pane active" id="panel-380299">					<p contenteditable="true">选项卡2中的内容</p>				</div>			</div>		</div>'
+                view:'<div class="tabbable" id="myTabs"><ul class="nav nav-tabs"><li class=""><a href="#panel-596431" data-toggle="tab" contenteditable="true">选项卡 #1</a></li><li class="active"><a href="#panel-380299" data-toggle="tab" contenteditable="true">选项卡 #2</a></li></ul><div class="tab-content"><div class="tab-pane" id="panel-596431">					<p contenteditable="true">选项卡1中的内容</p>				</div>				<div class="tab-pane active" id="panel-380299">					<p contenteditable="true">选项卡2中的内容</p>				</div>			</div>		</div>'
             },
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview:'手风琴',
-                view:''
+                view:'<div class="panel-group" id="myAccordion"><div class="panel panel-default"><div class="panel-heading"><a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-125560" href="#panel-element-137133" contenteditable="true">Collapsible Group Item #1</a></div><div id="panel-element-137133" class="panel-collapse collapse" style="height:0"><div class="panel-body" contenteditable="true">Anim pariatur cliche...</div></div></div><div class="panel panel-default"><div class="panel-heading"><a class="panel-title" data-toggle="collapse" data-parent="#panel-125560" href="#panel-element-197669" contenteditable="true">Collapsible Group Item #2</a></div><div id="panel-element-197669" class="panel-collapse in" style="height:auto"><div class="panel-body" contenteditable="true">A000000nim pariatur cliche...</div></div></div></div>'
+            },
+            {
+                buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
+                preview:'轮换图',
+                view:'<div class="carousel slide"id="myCarousel"><ol class="carousel-indicators"><li class="active"data-slide-to="0"data-target="#carousel-674057"></li><li data-slide-to="1"data-target="#carousel-674057"class=""></li><li data-slide-to="2"data-target="#carousel-674057"class=""></li></ol><div class="carousel-inner"><div class="item active"><img alt=""src="img/1.jpg"><div class="carousel-caption"><h4>这是第一张图片</h4><p>这是对第一张图片的描述</p></div></div><div class="item"><img alt=""src="img/2.jpg"><div class="carousel-caption"><h4>这是第二张图片</h4><p>这是对第二张图片的描述</p></div></div><div class="item"><img alt=""src="img/3.jpg"><div class="carousel-caption"><h4>这是第三张图片</h4><p>这是对第三张图片的描述</p></div></div></div><a class="left carousel-control"href="#carousel-674057"data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"href="#carousel-674057"data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>'
             }
         ]
     }
