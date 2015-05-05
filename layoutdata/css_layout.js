@@ -40,7 +40,7 @@ layOutData.push(
             {
                 buttons: '<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview: "搜索框",
-                view: '<form class="form-search"><input class="input-medium search-query" type="text"><button type="submit" class="btn btn-default" contenteditable="true">查找</button></form>'
+                view: '<form class="navbar-form navbar-left" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="搜索"></div> <button type="submit" class="btn btn-default">提交</button></form>'
             },
             {
                 buttons: '<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
