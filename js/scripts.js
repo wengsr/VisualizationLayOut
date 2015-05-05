@@ -328,6 +328,22 @@ function initContainer(){
 	});
 	configurationElm();
 }
+
+/**
+ * 上方导航栏按钮切换时样式处理
+ * @param downBtn 被按下的按钮
+ * @param upBtn   弹起的按钮
+ * @author wangfeng
+ */
+function btnClassToggle(downBtn, upBtn){
+    $.each(downBtn,function(i,dBtn){
+        $(dBtn).addClass("active");
+    });
+    $.each(upBtn,function(i,uBtn){
+        $(uBtn).removeClass("active");
+    });
+}
+
 $(document).ready(function() {
     //wengsr begin
     if(typeof(layOutData)!='undefined'){
@@ -400,10 +416,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		currenteditor.html(contenthandle.getData());
 	});
-    $("#saveHtml").click(function(e) {
-        e.preventDefault();
-        saveHtml();
-    });
 	$("[data-target=#downloadModal]").click(function(e) {
 
 		e.preventDefault();
@@ -425,7 +437,7 @@ $(document).ready(function() {
 		$("body").removeClass("devpreview sourcepreview");
 		$("body").addClass("edit");
 		removeMenuClasses();
-		$(this).addClass("active");
+        btnClassToggle(["#edit"], ["#devpreview", "#sourcepreview"]);
 		return false
 	});
 	$("#clear").click(function(e) {
@@ -436,14 +448,14 @@ $(document).ready(function() {
 		$("body").removeClass("edit sourcepreview");
 		$("body").addClass("devpreview");
 		removeMenuClasses();
-		$(this).addClass("active");
+        btnClassToggle(["#devpreview"], ["#edit", "#sourcepreview"]);
 		return false
 	});
 	$("#sourcepreview").click(function() {
 		$("body").removeClass("edit");
 		$("body").addClass("devpreview sourcepreview");
 		removeMenuClasses();
-		$(this).addClass("active");
+        btnClassToggle(["#sourcepreview"], ["#edit", "#devpreview"]);
 		return false
 	});
 	$("#fluidPage").click(function(e) {

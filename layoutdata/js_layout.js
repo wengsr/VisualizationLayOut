@@ -15,9 +15,28 @@ layOutData.push(
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview:'导航栏',
-                view:'<div class="navbar"><div class="navbar-inner"><div class="container-fluid"><a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></a> <a href="#" class="brand" contenteditable="true">网站名</a><div class="nav-collapse collapse navbar-responsive-collapse"><ul class="nav" contenteditable="true"><li class="active"><a href="#">主页</a></li><li><a href="#">链接</a></li><li><a href="#">链接</a></li><li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单 <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#">下拉导航1</a></li><li><a href="#">下拉导航2</a></li><li><a href="#">其他</a></li><li class="divider"></li><li class="nav-header">标签</li><li><a href="#">链接1</a></li><li><a href="#">链接2</a></li></ul></li></ul><ul class="nav pull-right" contenteditable="true"><li><a href="#">右边链接</a></li><li class="divider-vertical"></li><li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单 <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#">下拉导航1</a></li><li><a href="#">下拉导航2</a></li><li><a href="#">其他</a></li><li class="divider"></li><li><a href="#">链接3</a></li></ul></li></ul></div></div></div></div>'
+                view:'<nav class="navbar navbar-default" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">网站名</a></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav"><li class="active"><a href="#">主页</a></li><li><a href="#">链接</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#">执行动作1</a></li><li><a href="#">执行动作2</a></li><li><a href="#">其他动作</a></li><li class="divider"></li><li><a href="#">其他环节</a></li><li class="divider"></li><li><a href="#">另外的环节</a></li></ul></li></ul><form class="navbar-form navbar-left" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="搜索"></div><button type="submit" class="btn btn-default">提交</button></form><ul class="nav navbar-nav navbar-right"><li><a href="#">链接</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#">执行动作1</a></li><li><a href="#">执行动作2</a></li><li><a href="#">其他的动作</a></li><li class="divider"></li><li><a href="#">其他环节</a></li></ul></li></ul></div></nav>'
+            },
+            {
+                buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> <span class="btn-group btn-group-xs">	<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">样式<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="#" rel="alert-success">Success</a></li><li class=""><a href="#" rel="alert-info">Info</a></li><li class=""><a href="#" rel="alert-warning">Warning</a></li><li class=""><a href="#" rel="alert-danger">Danger</a></li></ul></span></span>',
+                preview:'提示框',
+                view:'<div class="alert alert-success alert-dismissable" contenteditable="true"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>提示!</h4>	<strong>警告!</strong> 请注意，该操作可能存在不安全因素！<a href="#" class="alert-link">弹出链接</a></div>'
+            },
+            {
+                buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
+                preview:'遮罩窗口',
+                view:''
+            },
+            {
+                buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
+                preview:'选项卡',
+                view:'<div class="tabbable" id="tabs-929360"><ul id="tt-999" class="nav nav-tabs"><li class=""><a href="#panel-596431" data-toggle="tab" contenteditable="true">选项卡 #1</a></li><li class="active"><a href="#panel-380299" data-toggle="tab" contenteditable="true">选项卡 #2</a></li></ul><div class="tab-content"><div class="tab-pane" id="panel-596431">					<p contenteditable="true">选项卡1中的内容</p>				</div>				<div class="tab-pane active" id="panel-380299">					<p contenteditable="true">选项卡2中的内容</p>				</div>			</div>		</div>'
+            },
+            {
+                buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
+                preview:'手风琴',
+                view:''
             }
-
         ]
     }
 );
