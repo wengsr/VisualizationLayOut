@@ -345,7 +345,25 @@ function btnClassToggle(downBtn, upBtn){
     });
 }
 
+/**
+ * 切换主题
+ * @author wangfeng
+ */
+function switchTheme(){
+    var themeLis = $("li[role=themeLi]");
+    $.each(themeLis,function(i,themeLi){
+        var themeId = $(themeLi).attr("id");
+        var themeNames = themeId.split("theme");
+        var realThemeName = themeNames[1];
+        $(themeLi).click(function(){
+            sessionStorage.themeLinkHref = "css/themeCss/" + realThemeName + "/bootstrap.min.css";
+            location.reload();
+        });
+    });
+}
+
 $(document).ready(function() {
+    switchTheme();
     //wengsr begin
     if(typeof(layOutData)!='undefined'){
         showLayOutClassList(layOutData,$('#divNaviLeft'));

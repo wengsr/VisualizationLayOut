@@ -3,9 +3,22 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>ALUI可视化布局</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="tempJs/bootstrap.min.css">-->
-    <!--<link rel="stylesheet" href="tempJs/1.css">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+    <script>
+        /**
+         * 加载主题
+         */
+        function getTheme() {
+            var themeCssLink = document.createElement("link");
+            themeCssLink.setAttribute('rel','stylesheet');
+            themeCssLink.setAttribute('type','text/css');
+            if(!sessionStorage.themeLinkHref)
+            themeCssLink.setAttribute("href", "css/themeCss/Default/bootstrap.min.css");
+            else themeCssLink.setAttribute("href", sessionStorage.themeLinkHref);
+            document.getElementsByTagName('head')[0].appendChild(themeCssLink);
+        }
+        getTheme();
+    </script>
     <link href="css/layoutit.css" rel="stylesheet">
 </head>
 <body class="edit">
@@ -53,8 +66,29 @@
                         </button>
                     </div>
                 </div>
-
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <div class="navbar-form navbar-left">
+                    <li class="dropdown">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="themeSelect" data-toggle="dropdown" aria-expanded="false">
+                                主题<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="themeSelect">
+                                <li role="themeLi" id="themeDefault"><a role="menuitem" tabindex="-1">默认</a></li>
+                                <li role="themeLi" id="themeCerulean"><a role="menuitem" tabindex="-1">天蓝</a></li>
+                                <li role="themeLi" id="themeCosmo"><a role="menuitem" tabindex="-1">宇宙</a></li>
+                                <li role="themeLi" id="themeSimplex"><a role="menuitem" tabindex="-1">简单</a></li>
+                                <li role="themeLi" id="themeSuperHero"><a role="menuitem" tabindex="-1">超人</a></li>
+                                <li role="themeLi" id="themeUnited"><a role="menuitem" tabindex="-1">统一</a></li>
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+            </ul>
+
 
         </div>
         <!--/.nav-collapse -->
@@ -124,7 +158,6 @@
                 </div>
                 <br>
                 <br>
-
                 <p>
                     <textarea></textarea>
                 </p>
@@ -139,9 +172,9 @@
 
 <!--本地调试JS-->
 <!--<script type="text/javascript" src="tempJs/jquery.min.js"></script>-->
-<!--<!--[if lt IE 9]>-->
+<!--&lt;!&ndash;[if lt IE 9]>-->
 <!--<script type="text/javascript" src="tempJs/1.11/jquery.min.js"></script>-->
-<!--<![endif]-->-->
+<!--<![endif]&ndash;&gt;-->
 <!--<script type="text/javascript" src="tempJs/bootstrap.min.js"></script>-->
 <!--<script type="text/javascript" src="js/jquery-ui.js"></script>-->
 <!--<script type="text/javascript" src="ckeditor/ckeditor.js"></script>-->
