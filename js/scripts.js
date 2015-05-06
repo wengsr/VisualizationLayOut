@@ -380,7 +380,7 @@ $(document).ready(function() {
 	$(".demo").css("min-height", $(window).height() - 130);
 	$(".sidebar-nav .lyrow").draggable({
 		connectToSortable: ".demo",
-		helper: "clone",
+        helper: "clone",
 		handle: ".drag",
 		start: function(e,t) {
 			if (!startdrag) stopsave++;
@@ -410,6 +410,7 @@ $(document).ready(function() {
 		connectToSortable: ".column",
 		helper: "clone",
 		handle: ".drag",
+        scroll: false,
 		start: function(e,t) {
 			if (!startdrag) stopsave++;
 			startdrag = 1;
