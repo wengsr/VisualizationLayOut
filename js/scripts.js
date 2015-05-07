@@ -379,7 +379,6 @@ function switchTheme(){
 function resetHelpTip(){
     var helpInfoIcons = $('i[role=helpInfoIcon]');
     $.each(helpInfoIcons,function(i,helpInfoIcon){
-        console.info($(helpInfoIcon));
         $(helpInfoIcon).hover(function(){
             var topValue = $(helpInfoIcon).offset().top;
             topValue = topValue - 16;
