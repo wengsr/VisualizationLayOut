@@ -45,7 +45,7 @@ layOutData.push(
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
                 preview:'带标题文本框按钮',
-                view:'<div class="form-group"><label class="col-sm-2 control-label" style="margin-top: 6px;"><span style="float:right">标题</span></label><div class="col-sm-10"><div class="input-group"><input type="text" class="form-control" placeholder="输入UIM卡号"><span class="input-group-btn"><button class="btn btn-default" type="button">校验</button></span></div></div></div>'
+                view:'<div class="form-group"><label class="col-sm-2 control-label" style="margin-top:6px"><span style="float:right">标题</span></label><div class="col-sm-10 input-group"><input type="text" class="form-control" placeholder="输入UIM卡号"><span class="input-group-btn"><button class="btn btn-default" type="button">校验</button></span></div></div>'
             },
             {
                 buttons:'<span class="configuration"><button class="btn btn-xs btn-default" href="#" data-target="#editorModal" role="button" data-toggle="modal">编辑</button> </span>',
