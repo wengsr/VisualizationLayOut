@@ -54,6 +54,7 @@ body {
 }
 .container { width:auto; margin:0 0px;}
 .sidebar-nav {
+	overflow-y: auto;
 	position:fixed;
 	width:200px;
 	left:0px;

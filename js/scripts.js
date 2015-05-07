@@ -350,7 +350,6 @@ function btnClassToggle(downBtn, upBtn){
  * @author wangfeng
  */
 function switchTheme(){
-    debugger;
     var themeCss = sessionStorage.themeLinkHref;
     if(themeCss){
         var themeMinHref = themeCss.split("bootstrap.min.css");
@@ -394,6 +393,7 @@ $(document).ready(function() {
 		connectToSortable: ".demo",
         helper: "clone",
 		handle: ".drag",
+		appendTo: 'body',
 		start: function(e,t) {
 			if (!startdrag) stopsave++;
 			startdrag = 1;
@@ -422,6 +422,7 @@ $(document).ready(function() {
 		connectToSortable: ".column",
 		helper: "clone",
 		handle: ".drag",
+		appendTo: 'body',
 		start: function(e,t) {
 			if (!startdrag) stopsave++;
 			startdrag = 1;
