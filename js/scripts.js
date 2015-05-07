@@ -373,11 +373,28 @@ function switchTheme(){
     });
 }
 
+/**
+ * 重置帮助弹出提示框位置
+ */
+function resetHelpTip(){
+    var helpInfoIcons = $('i[role=helpInfoIcon]');
+    $.each(helpInfoIcons,function(i,helpInfoIcon){
+        console.info($(helpInfoIcon));
+        $(helpInfoIcon).hover(function(){
+            var topValue = $(helpInfoIcon).offset().top;
+            topValue = topValue - 16;
+            var leftValue = 180;
+            $(helpInfoIcon).next().attr("style", "position:fixed; top:"+topValue+"px; left:"+leftValue+"px;");
+        });
+    });
+}
+
 $(document).ready(function() {
     switchTheme();
     //wengsr begin
     if(typeof(layOutData)!='undefined'){
         showLayOutClassList(layOutData,$('#divNaviLeft'));
+        resetHelpTip();
     }
     //wengsr end
 	CKEDITOR.disableAutoInline = true;
@@ -575,7 +592,7 @@ var showLayOutClassList = function(layOutClassList,container){
     $.each(layOutClassList,function(i,layOutClass){
         var ulNavTmp = $('<ul class="nav nav-list accordion-group">');
         var liHeaderTmp = $('<li class="nav-header">');
-        var divHelpTmp = '<div class="pull-right popover-info"><i class="glyphicon glyphicon-question-sign"></i>' +
+        var divHelpTmp = '<div class="pull-right popover-info"><i role="helpInfoIcon" class="glyphicon glyphicon-question-sign"></i>' +
             '<div class="popover fade right"><div class="arrow"></div><h3 class="popover-title">帮助</h3>' +
             '<div class="popover-content">' + layOutClass.helpInfo +
             '</div></div></div>';
