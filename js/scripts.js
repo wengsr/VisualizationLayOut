@@ -350,6 +350,18 @@ function btnClassToggle(downBtn, upBtn){
  * @author wangfeng
  */
 function switchTheme(){
+    debugger;
+    var themeCss = sessionStorage.themeLinkHref;
+    if(themeCss){
+        var themeMinHref = themeCss.split("bootstrap.min.css");
+        var themeHref = themeMinHref[0]+"bootstrap.css";
+        $("#themeMinCss").attr("href",themeCss);
+        $("#themeCss").attr("href",themeHref);
+    }else{
+        $("#themeMinCss").attr("href","css/themeCss/Default/bootstrap.min.css");
+        $("#themeCss").attr("href","css/themeCss/Default/bootstrap.css");
+    }
+
     var themeLis = $("li[role=themeLi]");
     $.each(themeLis,function(i,themeLi){
         var themeId = $(themeLi).attr("id");
@@ -410,7 +422,6 @@ $(document).ready(function() {
 		connectToSortable: ".column",
 		helper: "clone",
 		handle: ".drag",
-        scroll: false,
 		start: function(e,t) {
 			if (!startdrag) stopsave++;
 			startdrag = 1;
